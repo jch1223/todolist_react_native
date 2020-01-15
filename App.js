@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from "react-native";
+import { StyleSheet, View, Alert, TextInput } from "react-native";
 
 import StartButton from "./components/StartButton";
 
@@ -19,7 +19,7 @@ export default function App() {
         }}
       ></TextInput>
 
-      <StartButton showAlert={showAlert}></StartButton>
+      <StartButton showAlert={showAlert} disabled={content.length > 0 ? false : true}></StartButton>
     </View>
   );
 }
