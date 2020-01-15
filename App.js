@@ -1,50 +1,21 @@
 import React from "react";
-import { StyleSheet, View, Alert, TextInput } from "react-native";
-
-import StartButton from "./components/StartButton";
+import { StyleSheet, View, SafeAreaView } from "react-native";
+import Header from "./components/Header";
+import TodoItem from "./components/TodoItem";
 
 export default function App() {
-  let content = "";
-  let showAlert = () => {
-    Alert.alert(content);
-  };
-
   return (
-    <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        placeholder='입력하세요'
-        onChangeText={text => {
-          content = text;
-        }}
-      ></TextInput>
-
-      <StartButton showAlert={showAlert} disabled={content.length > 0 ? false : true}></StartButton>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Header />
+      <TodoItem title='리액트 네이티브 수강' done={true} />
+      <TodoItem title='리액트 네이티브 배포' done={false} />
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  box: {
-    flexDirection: "row",
-    backgroundColor: "#6830cf",
-    padding: 16
-  },
-  first: {
-    fontSize: 20,
-    color: "#fff",
-    fontWeight: "600",
-    padding: 16
-  },
-  input: {
-    width: "100%",
-    textAlign: "center",
-    paddingBottom: 10
+    backgroundColor: "#fff"
   }
 });
