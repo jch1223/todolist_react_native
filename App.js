@@ -1,13 +1,25 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Alert, TextInput } from "react-native";
+
+import StartButton from "./components/StartButton";
 
 export default function App() {
+  let content = "";
+  let showAlert = () => {
+    Alert.alert(content);
+  };
+
   return (
     <View style={styles.container}>
-      <View>
-        <Text>Open up App.js </Text>
-        <Text>to start working on your app!</Text>
-      </View>
+      <TextInput
+        style={styles.input}
+        placeholder='입력하세요'
+        onChangeText={text => {
+          content = text;
+        }}
+      ></TextInput>
+
+      <StartButton showAlert={showAlert}></StartButton>
     </View>
   );
 }
@@ -21,11 +33,18 @@ const styles = StyleSheet.create({
   },
   box: {
     flexDirection: "row",
-    backgroundColor: "#fff",
-    padding: 16,
-    margin: 64,
-    paddingBottom: 0,
-    borderWidth: 1,
-    borderColor: "#e0e0e0"
+    backgroundColor: "#6830cf",
+    padding: 16
+  },
+  first: {
+    fontSize: 20,
+    color: "#fff",
+    fontWeight: "600",
+    padding: 16
+  },
+  input: {
+    width: "100%",
+    textAlign: "center",
+    paddingBottom: 10
   }
 });
