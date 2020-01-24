@@ -4,7 +4,7 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 import { FontAwesome } from "@expo/vector-icons";
 import DeleteButton from "./DeleteButton";
 
-const TodoItem = ({ title, done, remove }) => {
+const TodoItem = ({ title, done, remove, toggle }) => {
   return (
     <Swipeable
       //  overshootLeft={false} overshootRight={false} rightThreshold={20}
@@ -12,7 +12,7 @@ const TodoItem = ({ title, done, remove }) => {
     >
       <View style={styles.container}>
         <View style={styles.todo}>
-          <TouchableOpacity activeOpacity={0.8} style={done ? styles.done : styles.check}>
+          <TouchableOpacity activeOpacity={0.8} style={done ? styles.done : styles.check} onPress={toggle}>
             <FontAwesome name='check' color={done ? "#fff" : "#e0e0e0"} size={14}></FontAwesome>
           </TouchableOpacity>
           <Text stlye={styles.title}>{title}</Text>
