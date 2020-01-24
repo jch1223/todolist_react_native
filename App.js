@@ -15,23 +15,52 @@ export default class App extends React.Component {
         title: "할일 어플 만들기",
         done: false
       }
-    ]
+    ],
+    showModal: false
   };
 
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <Header />
+        <Header
+          show={() => {
+            this.setState({ showModal: true });
+          }}
+        />
         <FlatList
           data={this.state.todos}
-          renderItem={({ item }) => {
-            return <TodoItem title={item.title} done={item.done} />;
+          renderItem={({ item, index }) => {
+            return (
+              <TodoItem
+                title={item.title}
+                done={item.done}
+                remove={() => {
+                  this.setState({
+                    todos: this.state.todos.filter((_, i) => i !== index)
+                  });
+                }}
+              />
+            );
           }}
           keyExtractor={(_, index) => {
             return `${index}`;
           }}
         />
-        <TaskModal isVisivle={false}></TaskModal>
+        <TaskModal
+          add={title => {
+            this.setState({
+              todos: this.state.todos.concat({
+                title: title,
+                done: false
+              }),
+              showModal: false
+            });
+          }}
+          hide={() => {
+            this.setState({ showModal: false });
+          }}
+          isVisivle={this.state.showModal}
+        ></TaskModal>
       </SafeAreaView>
     );
   }

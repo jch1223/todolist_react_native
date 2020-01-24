@@ -3,11 +3,15 @@ import { View, TextInput, StyleSheet, Text } from "react-native";
 
 import Modal from "react-native-modal";
 
-const TaskModal = ({ isVisivle }) => {
+const TaskModal = ({ isVisivle, hide, add }) => {
   return (
-    <Modal style={styles.modal} isVisible={isVisivle} avoidKeyboard>
+    <Modal style={styles.modal} isVisible={isVisivle} onBackdropPress={hide} avoidKeyboard>
       <View style={styles.container}>
-        <TextInput placeholder='새로운 할 일을 추가해 주세요' placeholderTextColor='#212121'></TextInput>
+        <TextInput
+          placeholder='새로운 할 일을 추가해 주세요'
+          placeholderTextColor='#212121'
+          onEndEditing={() => add("새로운 할일")}
+        ></TextInput>
       </View>
     </Modal>
   );

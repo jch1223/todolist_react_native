@@ -2,11 +2,11 @@ import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-const Header = () => {
+const Header = ({ show }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>할일 목록</Text>
-      <TouchableOpacity style={styles.button} activeOpacity={0.8}>
+      <TouchableOpacity style={styles.button} activeOpacity={0.8} onPress={show}>
         <Ionicons name='ios-add' color='#fff' size={24} />
       </TouchableOpacity>
     </View>

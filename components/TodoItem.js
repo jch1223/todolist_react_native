@@ -4,11 +4,11 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 import { FontAwesome } from "@expo/vector-icons";
 import DeleteButton from "./DeleteButton";
 
-const TodoItem = ({ title, done }) => {
+const TodoItem = ({ title, done, remove }) => {
   return (
     <Swipeable
       //  overshootLeft={false} overshootRight={false} rightThreshold={20}
-      renderRightActions={DeleteButton}
+      renderRightActions={() => <DeleteButton onPress={remove} />}
     >
       <View style={styles.container}>
         <View style={styles.todo}>
