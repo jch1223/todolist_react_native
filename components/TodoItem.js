@@ -8,7 +8,7 @@ const TodoItem = ({ title, done, remove, toggle }) => {
   return (
     <Swipeable
       //  overshootLeft={false} overshootRight={false} rightThreshold={20}
-      renderRightActions={() => <DeleteButton onPress={remove} />}
+      renderRightActions={e => <DeleteButton onPress={remove} />}
     >
       <View style={styles.container}>
         <View style={styles.todo}>
