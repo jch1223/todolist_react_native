@@ -65,8 +65,8 @@ export default class App extends React.Component {
               />
             );
           }}
-          keyExtractor={(_, index) => {
-            return `${index}`;
+          keyExtractor={(item, index) => {
+            return `${item.title}-${index}`;
           }}
         />
         <TaskModal
