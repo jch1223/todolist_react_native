@@ -4,27 +4,28 @@
     "slug": "MyfirstApp",
     "privacy": "public",
     "sdkVersion": "36.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#6830cf"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
+      "icon": "./assets/ios-icon.png",
       "supportsTablet": true
+    },
+    "android": {
+      "icon": "./assets/ios-icon.png",
+      "adaptiveIcon:": {
+        "backgroundColor": "#6830cf",
+        "foregroundImage": "./assets/android-foreground.png"
+      }
     }
   }
 }
