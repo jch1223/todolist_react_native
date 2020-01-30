@@ -8,11 +8,11 @@ export default class App extends React.Component {
   state = {
     todos: [
       {
-        title: "클래스 101 커리큘럼 만들기",
+        title: "우측 상단 + 버튼을 누르면 할 일을 추가 합니다",
         done: true
       },
       {
-        title: "할일 어플 만들기",
+        title: "왼쪽으로 스와이프 하면 삭제 할 수 있습니다",
         done: false
       }
     ],
