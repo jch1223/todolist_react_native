@@ -17,6 +17,7 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "bundleIdentifier": "me.jch.todo",
       "icon": "./assets/ios-icon.png",
       "supportsTablet": true
     },
