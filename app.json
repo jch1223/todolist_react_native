@@ -21,8 +21,9 @@
       "supportsTablet": true
     },
     "android": {
-      "icon": "./assets/ios-icon.png",
-      "adaptiveIcon:": {
+      "package": "me.jch.todo",
+      "icon": "./assets/android-icon.png",
+      "adaptiveIcon": {
         "backgroundColor": "#6830cf",
         "foregroundImage": "./assets/android-foreground.png"
       }
